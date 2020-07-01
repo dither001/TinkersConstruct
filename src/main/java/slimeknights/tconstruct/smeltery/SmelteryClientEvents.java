@@ -23,7 +23,7 @@ import slimeknights.tconstruct.smeltery.block.SearedTankBlock;
 import slimeknights.tconstruct.smeltery.client.render.FaucetTileEntityRenderer;
 import slimeknights.tconstruct.smeltery.client.render.TankTileEntityRenderer;
 import slimeknights.tconstruct.smeltery.item.TankItem;
-import slimeknights.tconstruct.smeltery.tileentity.TankTileEntity;
+import slimeknights.tconstruct.smeltery.tileentity.ITankTileEntity;
 
 @SuppressWarnings("unused")
 @EventBusSubscriber(modid= TConstruct.modID, value= Dist.CLIENT, bus= Bus.MOD)
@@ -51,8 +51,8 @@ public class SmelteryClientEvents extends ClientEventBase {
     event.getBlockColors().register((state, world, pos, index) -> {
       if (pos != null && world != null) {
         TileEntity te = world.getTileEntity(pos);
-        if (te instanceof TankTileEntity) {
-          FluidStack fluid = ((TankTileEntity)te).getInternalTank().getFluid();
+        if (te instanceof ITankTileEntity) {
+          FluidStack fluid = ((ITankTileEntity)te).getInternalTank().getFluid();
           return fluid.getFluid().getAttributes().getColor(fluid);
         }
       }
