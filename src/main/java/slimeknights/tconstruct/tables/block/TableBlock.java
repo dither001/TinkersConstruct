@@ -26,15 +26,15 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.Constants;
-import slimeknights.mantle.block.InventoryBlock;
 import slimeknights.tconstruct.library.TinkerNBTConstants;
 import slimeknights.tconstruct.library.utils.TagUtil;
+import slimeknights.tconstruct.shared.block.GuiInventoryBlock;
 import slimeknights.tconstruct.tables.tileentity.TableTileEntity;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
-public abstract class TableBlock extends InventoryBlock {
+public abstract class TableBlock extends GuiInventoryBlock {
 
   public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
   public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
